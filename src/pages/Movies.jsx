@@ -3,8 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { NavLink, useLocation } from "react-router-dom";
 import { getSearchMovies } from '../API'
 import { SearchBox } from "../components/SearchBox";
-
-export const Movies = () => {
+const Movies = () => {
     // const [movieName, setMovieName] = useState('');
     const location = useLocation();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -34,3 +33,5 @@ export const Movies = () => {
         })}</ul>
     </>)
 }
+
+export default Movies;

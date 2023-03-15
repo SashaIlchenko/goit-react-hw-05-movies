@@ -12,7 +12,7 @@ export async function getSearchMovies(name, page) {
     return response.data;
 }
 
-export async function getMovieDeteils(id) {
+export async function getMovieDetails(id) {
     const response = await axios.get(`${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`)
     return response.data;
 }

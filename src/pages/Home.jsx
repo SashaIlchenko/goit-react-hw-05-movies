@@ -20,7 +20,7 @@ const Home = () => {
     return (
         <><h1>Trending today</h1>
             <ul>{movies.map(movie => {
-                return <li key={movie.id}><NavLink to={`${movie.id}`}>{movie.title}</NavLink ></li>
+                return <li key={movie.id}><NavLink to={`/movies/${movie.id}`}>{movie.title}</NavLink ></li>
             })}</ul></>
     )
 }
