@@ -4,17 +4,19 @@ import { NavLink, useLocation } from "react-router-dom";
 import { getSearchMovies } from '../../API'
 import { SearchBox } from "../../components/SearchBox/SearchBox";
 const Movies = () => {
-    // const [movieName, setMovieName] = useState('');
     const location = useLocation();
     const [searchParams, setSearchParams] = useSearchParams();
+    const [movies, setMovies] = useState([]);
     const movieName = searchParams.get("query") ?? "";
 
-    const [movies, setMovies] = useState([]);
     useEffect(() => {
         async function getMovies() {
             if (!movieName) return;
             try {
                 const movies = await getSearchMovies(movieName, 1);
+                if (!movies.results.length || !movieName.trim()) {
+                    return alert(`No movies with ${movieName}`);
+                }
                 setMovies([...movies.results]);
             } catch (error) {
                 console.log(error)
