@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
-import { getTrendingMovies } from '../API'
+import { getTrendingMovies } from '../../API'
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
