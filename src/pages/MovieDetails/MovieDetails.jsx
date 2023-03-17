@@ -12,6 +12,7 @@ const MovieDetails = () => {
     const backLinkHref = location.state?.from ?? "/";
 
     useEffect(() => {
+
         async function getDetails() {
             try {
                 const details = await getMovieDetails(movieId);
@@ -35,8 +36,8 @@ const MovieDetails = () => {
         <Info>
             <p>Aditional information</p>
             <ul>
-                <li><NavLink to="cast" >Cast</NavLink ></li>
-                <li><NavLink to="reviews">Reviews</NavLink></li>
+                <li><NavLink to="cast" state={{ from: location.state.from }}>Cast</NavLink ></li>
+                <li><NavLink to="reviews" state={{ from: location.state.from }}>Reviews</NavLink></li>
             </ul>
             <Suspense fallback={<div>Loading subpage...</div>}>
                 <Outlet />
