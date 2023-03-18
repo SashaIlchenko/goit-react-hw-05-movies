@@ -36,8 +36,8 @@ const MovieDetails = () => {
         <Info>
             <p>Aditional information</p>
             <ul>
-                <li><NavLink to="cast" state={{ from: location.state.from }}>Cast</NavLink ></li>
-                <li><NavLink to="reviews" state={{ from: location.state.from }}>Reviews</NavLink></li>
+                <li><NavLink to="cast" state={{ from: backLinkHref }}>Cast</NavLink ></li>
+                <li><NavLink to="reviews" state={{ from: backLinkHref }}>Reviews</NavLink></li>
             </ul>
             <Suspense fallback={<div>Loading subpage...</div>}>
                 <Outlet />
